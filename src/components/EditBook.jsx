@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { db } from '../firebaseConfig';
 import { doc, getDoc, updateDoc } from 'firebase/firestore';
-import './styles/EditBook.scss';
+import './EditBook.scss';
 
 function EditBook() {
   const { id } = useParams(); // Get the book ID from the URL

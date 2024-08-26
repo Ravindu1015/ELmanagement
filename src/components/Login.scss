@@ -1,7 +1,8 @@
 // src/components/Login.scss
 
 .login-form {
-    @extend .container;
+  @extend .container !optional;
+
   
     form {
       display: flex;

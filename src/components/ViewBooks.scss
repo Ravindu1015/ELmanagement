@@ -1,7 +1,8 @@
 // src/components/ViewBooks.scss
 
 .books-list {
-    @extend .container;
+  @extend .container !optional;
+
   
     .book-item {
       background: #fff;

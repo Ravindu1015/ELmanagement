@@ -1,6 +1,6 @@
 // src/components/AddBook.js
 import { useState } from 'react';
-import './styles/AddBook.scss';
+import './AddBook.scss';
 import { db } from '../firebaseConfig';
 import { collection, addDoc } from "firebase/firestore";
 

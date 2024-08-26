@@ -1,7 +1,8 @@
-// src/components/EditBook.scss
+// src/components/Register.scss
 
-.edit-book-form {
-    @extend .container;
+.register-form {
+  @extend .container !optional;
+
   
     form {
       display: flex;

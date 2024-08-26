@@ -1,7 +1,7 @@
 // src/components/DeleteBook.js
 // import React from 'react'; // Remove the unused import statement
 import { db } from '../firebaseConfig';
-import './styles/DeleteBook.scss';
+import './DeleteBook.scss';
 import { doc, deleteDoc } from 'firebase/firestore';
 
 import PropTypes from 'prop-types';

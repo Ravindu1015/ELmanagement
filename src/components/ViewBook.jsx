@@ -4,8 +4,7 @@ import { Link } from 'react-router-dom';
 import { db } from '../firebaseConfig';
 import { collection, getDocs } from 'firebase/firestore';
 import DeleteBook from './DeleteBook';
-import './styles/ViewBooks.scss';
-import './styles/DeleteBook.scss';
+import './ViewBooks.scss';
 
 function ViewBooks() {
   const [books, setBooks] = useState([]);

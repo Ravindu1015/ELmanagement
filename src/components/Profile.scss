@@ -1,7 +1,8 @@
 // src/components/Profile.scss
 
 .profile-container {
-    @extend .container;
+  @extend .container !optional;
+
   
     .profile-info {
       text-align: left;

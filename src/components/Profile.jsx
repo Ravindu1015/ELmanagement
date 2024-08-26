@@ -1,6 +1,6 @@
 // src/components/Profile.js
 import { auth } from '../firebaseConfig';
-import './styles/Profile.scss'; 
+import './Profile.scss'; 
 
 function Profile() {
   const user = auth.currentUser;
