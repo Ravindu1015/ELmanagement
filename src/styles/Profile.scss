@@ -1,0 +1,22 @@
+// src/components/Profile.scss
+
+.profile-container {
+    @extend .container;
+  
+    .profile-info {
+      text-align: left;
+      margin-top: 20px;
+  
+      p {
+        font-size: 1.1em;
+        margin: 10px 0;
+        color: #555;
+  
+        span {
+          font-weight: bold;
+          color: #333;
+        }
+      }
+    }
+  }
+  

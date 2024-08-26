@@ -1,0 +1,15 @@
+// src/components/DeleteBook.scss
+
+.delete-book-button {
+    color: #ff4d4f;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    background: none;
+    padding: 0;
+  
+    &:hover {
+      color: #ff0000;
+    }
+  }
+  

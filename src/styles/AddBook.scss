@@ -1,0 +1,22 @@
+// src/components/AddBook.scss
+
+.add-book-form {
+    @extend .container;
+  
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+  
+      input {
+        @extend input;
+        border: 1px solid #ccc;
+      }
+  
+      button {
+        @extend button;
+        margin-top: 20px;
+      }
+    }
+  }
+  
