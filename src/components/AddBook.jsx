@@ -32,19 +32,19 @@ function AddBook() {
         placeholder="Title"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
-      />
+      /><br/><br/><br/>
       <input
         type="text"
         placeholder="Author"
         value={author}
         onChange={(e) => setAuthor(e.target.value)}
-      />
+      /><br/><br/><br/>
       <input
         type="text"
         placeholder="ISBN"
         value={isbn}
         onChange={(e) => setIsbn(e.target.value)}
-      />
+      /><br/><br/><br/>
       <button type="submit">Add Book</button>
     </form>
   );

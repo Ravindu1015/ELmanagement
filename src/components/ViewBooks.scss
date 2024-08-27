@@ -1,45 +1,82 @@
-// src/components/ViewBooks.scss
-
 .books-list {
-  @extend .container !optional;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+}
 
-  
-    .book-item {
-      background: #000000;
-      padding: 20px;
-      margin-bottom: 20px;
-      border: 1px solid #eee;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  
-      h3 {
-        margin: 0;
-        padding: 0;
-        font-size: 1.5em;
-        color: #007bff;
-      }
-  
-      p {
-        font-size: 1em;
-        color: #0b0b0b;
-      }
-  
-      a, button {
-        display: inline-block;
-        margin-top: 10px;
-        margin-right: 10px;
-        text-decoration: none;
-        color: #007bff;
-        font-weight: bold;
-        cursor: pointer;
-        border: none;
-        background: none;
-        padding: 0;
-  
-        &:hover {
-          color: #0056b3;
-        }
-      }
+.book-item {
+  background: rgb(70, 76, 247);
+  width: calc(33.33% - 20px); // 3 cards per row with spacing
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+
+  &:hover {
+    transform: translateY(-10px); // Lift the card on hover
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15); // Enhance shadow on hover
+  }
+
+  h3 {
+    margin: 0;
+    padding: 0;
+    font-size: 1.5em;
+    color: #007bff;
+    transition: color 0.3s ease;
+  }
+
+  p {
+    font-size: 1em;
+    color: #333;
+    margin: 15px 0;
+  }
+
+  a,
+  button {
+    display: inline-block;
+    margin-top: 10px;
+    margin-right: 10px;
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    background: none;
+    padding: 0;
+    font-size: 1em;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #0056b3;
     }
   }
-  
+}
+
+.book-item::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  background: rgba(0, 123, 255, 0.1);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+@media (max-width: 1024px) {
+  .book-item {
+    width: calc(50% - 20px); // 2 cards per row for tablets
+  }
+}
+
+@media (max-width: 768px) {
+  .book-item {
+    width: 100%; // Full width for mobile devices
+  }
+}

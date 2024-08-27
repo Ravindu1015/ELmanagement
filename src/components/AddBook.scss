@@ -1,23 +1,74 @@
 // src/components/AddBook.scss
 
 .add-book-form {
-  @extend .container !optional;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.8); // Add a semi-transparent background for better contrast
+}
 
+.card {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-10px); // Lift the card on hover
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15); // Enhance shadow on hover
+  }
   
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
+  h2 {
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #007bff;
+  }
   
-      input {
-        @extend input;
-        border: 1px solid #ccc;
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    
+    input, select, textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1em;
+      transition: border-color 0.3s ease;
+  
+      &:focus {
+        border-color: #007bff;
+        outline: none;
       }
+    }
   
-      button {
-        @extend button;
-        margin-top: 20px;
+    button {
+      padding: 10px;
+      font-size: 1.2em;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #0056b3;
       }
     }
   }
+}
+
+@media (max-width: 768px) {
+  .card {
+    padding: 20px;
+  }
+}
+
   
