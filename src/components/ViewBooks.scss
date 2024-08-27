@@ -11,7 +11,7 @@
   width: calc(33.33% - 20px); // 3 cards per row with spacing
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 20px rgb(32, 32, 32);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
