@@ -1,0 +1,26 @@
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+  
+  .footer p {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+  
+  @media (max-width: 768px) {
+    .footer {
+      padding: 0.5rem;
+    }
+  
+    .footer p {
+      font-size: 0.8rem;
+    }
+  }
+  

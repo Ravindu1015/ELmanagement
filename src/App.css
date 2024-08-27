@@ -1,53 +1,61 @@
-/* General reset for spacing and margins */
-* {
+body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-body {
   font-family: 'Arial', sans-serif;
+  background: url('/images/lib.png') no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
 }
 
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Black overlay */
+  z-index: -1;
+}
+
+#root {
+  z-index: 1;
+  position: relative;
+  padding: 2rem;
+}
+
+/* Navbar Styles */
 .navbar {
   display: flex;
   justify-content: center;
-  background-color: #333;
+  background-color: #ffffff;
   padding: 1rem;
   position: sticky;
   top: 0;
   z-index: 1000;
+  border-bottom: 2px solid #333;
 }
 
 .nav-link {
-  color: white;
+  color: black;
   text-decoration: none;
   margin: 0 1.5rem;
   padding: 0.5rem 0;
-  position: relative;
   font-size: 1.2rem;
   transition: color 0.3s ease;
 }
 
 .nav-link:hover {
-  color: #f0f0f0;
+  color: blue;
 }
 
 .nav-link.active {
   font-weight: bold;
+  border-bottom: 2px solid blue;
 }
 
-.nav-link.active::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background-color: white;
-  border-radius: 2px;
-}
-
+/* Media Queries for responsiveness */
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
@@ -59,47 +67,72 @@ body {
   }
 }
 
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* Styling for text elements */
+h1, h2, h3, h4, h5, h6, p, a {
+  color: black;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+a {
+  color: blue;
+  text-decoration: none;
 }
 
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+a:hover {
+  color: darkblue;
 }
 
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Button styles */
+button {
+  background-color: blue;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button:hover {
+  background-color: darkblue;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
+/* Card styling */
 .card {
-  padding: 2em;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 800px;
+  text-align: center;
+  color: black;
 }
 
-.read-the-docs {
-  color: #888;
+.card-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.card-content {
+  font-size: 1rem;
+  color: black;
+}
+
+/* For cards within a grid layout */
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.card-grid .card {
+  flex: 1 1 calc(33% - 2rem);
+  min-width: 250px;
+}
+
+@media (max-width: 768px) {
+  .card-grid .card {
+    flex: 1 1 100%;
+  }
 }
