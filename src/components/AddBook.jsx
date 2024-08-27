@@ -27,19 +27,19 @@ function AddBook() {
   return (
     <form onSubmit={handleAddBook}>
       <h2>Add Book</h2>
-      <input
+      <text>Title  __ :</text><input
         type="text"
         placeholder="Title"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
       /><br/><br/><br/>
-      <input
+      <text>Author_  :</text><input
         type="text"
         placeholder="Author"
         value={author}
         onChange={(e) => setAuthor(e.target.value)}
       /><br/><br/><br/>
-      <input
+      <text>ISBN  __:</text><input
         type="text"
         placeholder="ISBN"
         value={isbn}

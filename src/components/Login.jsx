@@ -22,13 +22,13 @@ function Login() {
   return (
     <form onSubmit={handleLogin}>
       <h2>Login</h2>
-      <input
+      <text>Email  ___:</text><input
         type="email"
         placeholder="Email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       /><br/><br/><br/>
-      <input
+      <text>Password  :</text><input
         type="password"
         placeholder="Password"
         value={password}
