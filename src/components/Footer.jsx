@@ -1,10 +1,7 @@
-// import React from 'react';
-import './Footer.scss'; // Importing the CSS for the footer
-
 function Footer() {
   return (
-    <footer className="footer">
-      <p>© 2024 E-Library Management. All rights reserved.</p>
+    <footer className="bg-gray-800 text-white text-center py-4 fixed bottom-0 w-full z-50">
+      <p className="m-0 text-sm md:text-base">© 2024 E-Library Management. All rights reserved.</p>
     </footer>
   );
 }
