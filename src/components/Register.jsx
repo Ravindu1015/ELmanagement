@@ -1,41 +1,70 @@
-// src/components/Register.js
 import { useState } from 'react';
 import { auth } from '../firebaseConfig';
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import './Register.scss';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom'; // To navigate after registration
 
 function Register() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
       await createUserWithEmailAndPassword(auth, email, password);
-      alert("Registration successful!");
+      alert('Registration successful!');
+      navigate('/profile'); // Navigate to the profile page after successful registration
     } catch (error) {
-      console.error("Error registering:", error.message);
+      console.error('Error registering:', error.message);
       alert(error.message);
     }
   };
 
   return (
-    <form onSubmit={handleRegister}>
-      <h2>Register</h2>
-      <text>Email  ___:</text><input
-        type="email"
-        placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      /><br/><br/><br/>
-      <text>Password  :</text><input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      /><br/><br/><br/>
-      <button type="submit">Register</button>
-    </form>
+    <div className="flex justify-center items-center h-screen bg-gray-100">
+      <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-lg text-center">
+        <h2 className="text-2xl font-semibold text-gray-800 mb-6">Register</h2>
+        <form onSubmit={handleRegister} className="space-y-4">
+          <div>
+            <label htmlFor="email" className="block text-left text-gray-700 font-semibold mb-2">
+              Email
+            </label>
+            <input
+              type="email"
+              id="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full p-3 border border-gray-300 rounded-lg focus:border-blue-500 outline-none"
+              required
+            />
+          </div>
+          <div>
+            <label htmlFor="password" className="block text-left text-gray-700 font-semibold mb-2">
+              Password
+            </label>
+            <input
+              type="password"
+              id="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="w-full p-3 border border-gray-300 rounded-lg focus:border-blue-500 outline-none"
+              required
+            />
+          </div>
+          <button
+            type="submit"
+            className="w-full bg-blue-500 text-white font-semibold py-3 rounded-lg hover:bg-blue-600 transition-colors"
+          >
+            Register
+          </button>
+        </form>
+        <p className="mt-4 text-gray-600 text-sm">
+          Already have an account? <a href="/login" className="text-blue-500 font-semibold hover:underline">Login</a>
+        </p>
+      </div>
+    </div>
   );
 }
 

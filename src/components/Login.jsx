@@ -1,8 +1,6 @@
-// src/components/Login.js
 import { useState } from 'react';
 import { auth } from '../firebaseConfig';
 import { signInWithEmailAndPassword } from "firebase/auth";
-import './Login.scss';
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -20,22 +18,38 @@ function Login() {
   };
 
   return (
-    <form onSubmit={handleLogin}>
-      <h2>Login</h2>
-      <text>Email  ___:</text><input
-        type="email"
-        placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      /><br/><br/><br/>
-      <text>Password  :</text><input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      /><br/><br/><br/>
-      <button type="submit">Login</button>
-    </form>
+    <div className="flex items-center justify-center h-screen bg-gray-100">
+      <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+        <h2 className="text-3xl font-semibold text-blue-600 mb-6 text-center">Login</h2>
+        <form onSubmit={handleLogin} className="flex flex-col gap-4">
+          <label className="text-gray-600 font-medium">Email:</label>
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="p-3 border border-gray-300 rounded focus:outline-none focus:border-blue-500 transition-colors"
+          />
+          <label className="text-gray-600 font-medium">Password:</label>
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className="p-3 border border-gray-300 rounded focus:outline-none focus:border-blue-500 transition-colors"
+          />
+          <button
+            type="submit"
+            className="py-3 px-6 bg-blue-600 text-white rounded-lg hover:bg-blue-500 transition-colors"
+          >
+            Login
+          </button>
+        </form>
+        <div className="mt-4 text-center text-sm text-gray-600">
+          Dont have an account? <a href="/signup" className="text-blue-600 hover:text-blue-500 font-bold">Sign up</a>
+        </div>
+      </div>
+    </div>
   );
 }
 
