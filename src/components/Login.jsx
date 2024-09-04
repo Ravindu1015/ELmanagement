@@ -28,7 +28,7 @@ function Login() {
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="p-3 border border-gray-300 rounded focus:outline-none focus:border-blue-500 transition-colors"
+            className="p-3 border border-gray-300 rounded focus:outline-none focus:border-blue-500 transition-colors text-color-black"
           />
           <label className="text-gray-600 font-medium">Password:</label>
           <input
@@ -46,7 +46,7 @@ function Login() {
           </button>
         </form>
         <div className="mt-4 text-center text-sm text-gray-600">
-          Dont have an account? <a href="/signup" className="text-blue-600 hover:text-blue-500 font-bold">Sign up</a>
+          Dont have an account? <a href="/register" className="text-blue-600 hover:text-blue-500 font-bold">Sign up</a>
         </div>
       </div>
     </div>

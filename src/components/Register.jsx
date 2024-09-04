@@ -22,17 +22,17 @@ function Register() {
 
   return (
     <div className="flex justify-center items-center h-screen bg-gray-100">
-      <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-lg text-center">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-6">Register</h2>
+      <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+        <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">Create an Account</h2>
         <form onSubmit={handleRegister} className="space-y-4">
           <div>
-            <label htmlFor="email" className="block text-left text-gray-700 font-semibold mb-2">
+            <label htmlFor="email" className="block text-gray-700 font-medium mb-2">
               Email
             </label>
             <input
               type="email"
               id="email"
-              placeholder="Email"
+              placeholder="Enter your email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="w-full p-3 border border-gray-300 rounded-lg focus:border-blue-500 outline-none"
@@ -40,13 +40,13 @@ function Register() {
             />
           </div>
           <div>
-            <label htmlFor="password" className="block text-left text-gray-700 font-semibold mb-2">
+            <label htmlFor="password" className="block text-gray-700 font-medium mb-2">
               Password
             </label>
             <input
               type="password"
               id="password"
-              placeholder="Password"
+              placeholder="Enter your password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className="w-full p-3 border border-gray-300 rounded-lg focus:border-blue-500 outline-none"
@@ -60,7 +60,7 @@ function Register() {
             Register
           </button>
         </form>
-        <p className="mt-4 text-gray-600 text-sm">
+        <p className="mt-4 text-gray-600 text-sm text-center">
           Already have an account? <a href="/login" className="text-blue-500 font-semibold hover:underline">Login</a>
         </p>
       </div>
